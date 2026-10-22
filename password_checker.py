@@ -27,7 +27,7 @@ def check_password(password):
         feedback.append("Add uppercase letters to your password.")
 
     #Check  for numbers
-    if any(char.isdigit() for char in paswword):
+    if any(char.isdigit() for char in password):
         score+= 1
     else:
         feedback.append("Add numbers to your password.")
@@ -51,5 +51,16 @@ def check_password(password):
     return strength, feedback
 
 def main():
+    password = input("Enter your passeord :")
+    strength, feedback = check_password(password)
 
+    print(f"\nPassword Strength: {strength}")
+    if feedback:
+        print("Feedback:")
+        for item in feedback:
+            print(f" - {item}")
+    else:
+        print("Your password is strong and secure!")
 
+if __name__ == "__main__":
+    main()
