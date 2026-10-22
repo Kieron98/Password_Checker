@@ -11,5 +11,17 @@ def check_password(password):
     elif len(password) >= 8:
         score += 1
         feedback.append("Consider using at least 15 characters.")
-    else
+    else:
         feedback.append("Your password is too short")
+
+    #Check for lowercase letters
+    if any(char.islower() for char in password):
+        score += 1
+    else:
+        feedback.append("Add lowercase letters to your password.")
+
+    #Check for uppercase letters
+    if any(char.isupper() for char in password):
+        score += 1
+    else:
+        feedback.append("Add uppercase letters to your password.")
