@@ -25,3 +25,15 @@ def check_password(password):
         score += 1
     else:
         feedback.append("Add uppercase letters to your password.")
+
+    #Check  for numbers
+    if any(char.isdigit() for char in paswword):
+        score+= 1
+    else:
+        feedback.append("Add numbers to your password.")
+
+    #Check for special characters
+    if any(char in string.punctuation for char in password):
+        score += 1
+    else:
+        feedback.append("Add special characters to your password.") 
