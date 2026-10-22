@@ -37,3 +37,19 @@ def check_password(password):
         score += 1
     else:
         feedback.append("Add special characters to your password.") 
+
+    #Determine the rating based on the score
+    if len(password) < 8:
+        strength = "Weak"
+    elif score <= 3:
+        strength = "Moderate"
+    elif score <= 5:
+        strength = "Strong"
+    else:
+        strength = "Very Strong"
+
+    return strength, feedback
+
+def main():
+
+
